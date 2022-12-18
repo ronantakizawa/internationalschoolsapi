@@ -4,7 +4,7 @@ const setOrder = require("./setorder")
 
 const getAll = (req,res) =>
 {
-    Schools.find().sort({'fees': -1}).then((result)=>
+    Schools.find().sort({'fees(USD)': -1}).then((result)=>
     {
         res.send(result);
     }
@@ -17,7 +17,7 @@ const getAll = (req,res) =>
 const getByRegion = (req,res) =>
 {
     const {regionname} = req.params;
-    Schools.find({"region":regionname}).sort({'fees':-1}).then((result)=>
+    Schools.find({"region":regionname}).sort({'fees(USD)':-1}).then((result)=>
     {
         res.send(result);
     }
@@ -42,7 +42,7 @@ const getByRegionSortFees = (req,res) =>
 {
     const {regionname} = req.params;
     const{order} = req.params;
-    Schools.find({"region":regionname}).sort({'fees':setOrder(order)}).then((result)=>
+    Schools.find({"region":regionname}).sort({'fees(USD)':setOrder(order)}).then((result)=>
     {
         res.send(result);
     }
