@@ -1,6 +1,13 @@
 const Schools = require("./schema");
 const setOrder = require("./setorder")
+const fs = require('fs');
 
+
+
+const homepage = (req,res) =>
+{
+    res.sendFile(__dirname + '/intro.html');
+}
 
 const getAll = (req,res) =>
 {
@@ -93,10 +100,24 @@ const getByRegionWithCap = (req,res) =>
 
 }
 
+const getByRegionFindIB = (req,res) =>
+{
+    const {regionname} = req.params;
+    Schools.find({"region":regionname ,"curriculum":"/.*IB.*/"}).then((result)=>
+    {
+        res.send(result);
+    }
+    ).catch((err)=>{
+        console.log(err);
+    });
+
+}
+
 
 
 
 module.exports = {getAll,getByName,getByRegion,getByRegionSortFees,
-    getByRegionSortCurriculum,getByRegionSortNumberofStudents,getByRegionWithCap};
+    getByRegionSortCurriculum,getByRegionSortNumberofStudents,
+    getByRegionWithCap,getByRegionFindIB,homepage};
 
 

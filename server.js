@@ -9,7 +9,9 @@ mongoose.connect(process.env.dbURI).then((result)=> app.listen(process.env.PORT,
 
 
 
-app.get('/', functions.getAll);
+app.get('/',functions.homepage);
+
+app.get('/all', functions.getAll);
 
 app.get('/name/:queryname', functions.getByName);
 
@@ -23,3 +25,4 @@ app.get('/:regionname/sortbynumberofstudents/:order', functions.getByRegionSortN
 
 //app.get('/:regionname/sortbycurriculum/:curriculumname', functions.getByRegionSortCurriculum);
 
+app.get('/:regionname/findIB', functions.getByRegionFindIB);
