@@ -71,53 +71,11 @@ const getByRegionSortNumberofStudents = (req,res) =>
     });
 }
 
-const getByRegionSortCurriculum = (req,res) =>
-{
-    const {regionname} = req.params;
-    const{curriculumname} = req.params;
-    Schools.find({"region":regionname,"curriculum":curriculumname}).then((result)=>
-    {
-        res.send(result);
-    }
-    ).catch((err)=>{
-        console.log(err);
-    });
-}
-
-const getByRegionWithCap = (req,res) =>
-{
-
-    const {regionname} = req.params;
-    const capvalue = parseInt(req.params.capvalue);
-    console.log(capvalue);
-    Schools.find({"region":regionname ,"fees":{$lte:capvalue}}).then((result)=>
-    {
-        res.send(result);
-    }
-    ).catch((err)=>{
-        console.log(err);
-    });
-
-}
-
-const getByRegionFindIB = (req,res) =>
-{
-    const {regionname} = req.params;
-    Schools.find({"region":regionname ,"curriculum":"/.*IB.*/"}).then((result)=>
-    {
-        res.send(result);
-    }
-    ).catch((err)=>{
-        console.log(err);
-    });
-
-}
 
 
 
 
-module.exports = {getAll,getByName,getByRegion,getByRegionSortFees,
-    getByRegionSortCurriculum,getByRegionSortNumberofStudents,
-    getByRegionWithCap,getByRegionFindIB,homepage};
+
+module.exports = {getAll,getByName,getByRegion,getByRegionSortFees,getByRegionSortNumberofStudents,homepage};
 
 
