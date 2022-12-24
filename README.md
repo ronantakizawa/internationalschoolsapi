@@ -2,6 +2,10 @@ The international schools API allows users to access data related to internation
 
  
 
+https://user-images.githubusercontent.com/71115970/209421819-cc7cac0a-46d1-40f3-8814-30ffc457234d.mov
+
+
+
 The API lists information about international schools including:
 
 -        Name
