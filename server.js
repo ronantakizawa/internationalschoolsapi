@@ -5,8 +5,7 @@ const functions = require("./functions");
 const app = express();
 app.use(express.json());
 
-mongoose.connect("mongodb+srv://rtakizawa:rtakizawa@antiProcrastinator.iqu6vnq.mongodb.net/antiprocrastinator?retryWrites=true&w=majority")
-.then((result)=> app.listen(8000,()=>console.log("LIVE")) ).catch((err)=>console.log(err));
+mongoose.connect(process.env.dbURI).then((result)=> app.listen(8000,()=>console.log("LIVE")) ).catch((err)=>console.log(err));
 
 
 
@@ -17,6 +16,7 @@ app.get('/all', functions.getAll);
 app.get('/name/:queryname', functions.getByName);
 
 app.get('/:regionname', functions.getByRegion);
+
 
 app.get('/:regionname/sortbyfees/:order', functions.getByRegionSortFees);
 
