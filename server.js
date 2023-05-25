@@ -8,7 +8,7 @@ app.use(express.json());
 
 mongoose.set('strictQuery', true);
 
-mongoose.connect("mongodb+srv://ronantakizawa:ronanmongodb@antiprocrastinator.iqu6vnq.mongodb.net/antiprocrastinator?retryWrites=true&w=majority").then((result)=> app.listen(8000,()=>console.log("LIVE")) ).catch((err)=>console.log(err));
+mongoose.connect(process.env.dbURI).then((result)=> app.listen(8000,()=>console.log("LIVE")) ).catch((err)=>console.log(err));
 
 
 
