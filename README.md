@@ -1,4 +1,4 @@
-API Link: https://internationalschoolsapi.vercel.app/all
+API Link: https://internationalschoolsapi.vercel.app
 
 The international schools API allows users to access data related to international schools globally. The GET methods provided in this API allow users to find international schools within specific regions, search for specific schools, and find the most affordable schools within regions.
 
