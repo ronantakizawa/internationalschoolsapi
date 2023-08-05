@@ -1,6 +1,7 @@
 API Links:
 
 Vercel: https://internationalschoolsapi.vercel.app
+
 AWS EC2: http://ec2-3-144-98-240.us-east-2.compute.amazonaws.com:8000
 
 The international schools API allows users to access data related to international schools globally. The GET methods provided in this API allow users to find international schools within specific regions, search for specific schools, and find the most affordable schools within regions.
