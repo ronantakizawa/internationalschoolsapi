@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: internationalschoolsapi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: internationalschoolsapi
+  template:
+    metadata:
+      labels:
+        app: internationalschoolsapi
+    spec:
+      containers:
+        - name: internationalschoolsapi
+          image: ronantakizawa/internationalschoolsapi:v5
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: internationalschoolsapi-service
+spec:
+  selector:
+    app: internationalschoolsapi
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+      nodePort: 30100 
