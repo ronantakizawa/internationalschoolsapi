@@ -6,6 +6,8 @@ AWS EC2: http://ec2-3-144-98-240.us-east-2.compute.amazonaws.com:8000
 
 The international schools API allows users to access data related to international schools globally. The GET methods provided in this API allow users to find international schools within specific regions, search for specific schools, and find the most affordable schools within regions.
 
+The API is deployed directly, but can be run on 3 replica Kubernetes pods. 
+
  
 
 https://user-images.githubusercontent.com/71115970/209421819-cc7cac0a-46d1-40f3-8814-30ffc457234d.mov
